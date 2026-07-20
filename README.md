@@ -9,7 +9,7 @@ educativos.
 ## Acesso
 
 - Local: <http://127.0.0.1:5056> (após subir o servidor — veja abaixo)
-- Produção: preencher após o primeiro deploy no Cloudflare Pages
+- Produção: <https://vida-ativa.pages.dev/>
 
 ## Stack
 
