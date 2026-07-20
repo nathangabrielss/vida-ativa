@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar — Vida Ativa</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="auth-shell">
+    <!-- Painel lateral (desktop) -->
+    <aside class="auth-aside">
+      <div class="a-brand">
+        <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></span>
+        Vida Ativa
+      </div>
+      <div>
+        <h2>Saúde e bem-estar, acompanhados de perto.</h2>
+        <ul class="a-list">
+          <li><span class="a-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span> Cadastro e gestão de participantes</li>
+          <li><span class="a-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span> Avaliações físicas e evolução</li>
+          <li><span class="a-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span> Cálculo automático de IMC por faixa etária</li>
+        </ul>
+      </div>
+      <div class="a-foot">Programa de qualidade de vida • acesso restrito</div>
+    </aside>
+
+    <!-- Formulários -->
+    <main class="auth-main">
+      <div class="auth-card">
+        <div class="brand"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></span> Vida Ativa</div>
+
+        <!-- Entrar -->
+        <form id="form-login" autocomplete="on">
+          <p class="auth-sub">Entre com seu usuário e senha</p>
+          <div class="field">
+            <label for="login-user">Usuário</label>
+            <input id="login-user" name="username" autocomplete="username" required placeholder="ex.: ana.coordenadora">
+          </div>
+          <div class="field" style="margin-bottom:.4rem">
+            <label for="login-pass">Senha</label>
+            <input id="login-pass" name="password" type="password" autocomplete="current-password" required>
+          </div>
+          <div class="between" style="margin-bottom:1rem">
+            <label class="checkbox" style="margin:0"><input id="login-remember" type="checkbox"> Manter conectado</label>
+            <button type="button" class="linkbtn" data-panel="reset">Esqueci minha senha</button>
+          </div>
+          <p class="error-msg" id="login-error" role="alert"></p>
+          <button class="btn btn-primary btn-block" type="submit">Entrar</button>
+          <div class="auth-divider">ou</div>
+          <button type="button" class="btn btn-outline btn-block" data-panel="signup">Criar conta de administrador</button>
+        </form>
+
+        <!-- Criar conta -->
+        <form id="form-signup" hidden>
+          <h2>Criar conta</h2>
+          <p class="auth-sub" style="text-align:left;margin-bottom:1.1rem">O primeiro cadastro do sistema vira administrador.</p>
+          <div class="form-grid">
+            <div class="field"><label for="su-nome">Nome</label><input id="su-nome" required></div>
+            <div class="field"><label for="su-sobrenome">Sobrenome</label><input id="su-sobrenome" required></div>
+          </div>
+          <div class="field"><label for="su-email">Email</label><input id="su-email" type="email" required></div>
+          <div class="field" style="margin-bottom:.4rem"><label for="su-senha">Senha</label><input id="su-senha" type="password" autocomplete="new-password" required></div>
+          <div id="su-pw-meter"></div>
+          <div class="field"><label for="su-senha2">Confirmar senha</label><input id="su-senha2" type="password" autocomplete="new-password" required></div>
+          <p class="error-msg" id="signup-error" role="alert"></p>
+          <button class="btn btn-primary btn-block" type="submit">Cadastrar</button>
+          <div class="link-row"><button type="button" class="linkbtn" data-panel="login">← Voltar para entrar</button></div>
+        </form>
+
+        <!-- Recuperar senha -->
+        <form id="form-reset" hidden>
+          <h2>Recuperar senha</h2>
+          <p class="auth-sub" style="text-align:left;margin-bottom:1.1rem">Informe seu usuário. O administrador irá gerar uma senha temporária.</p>
+          <div class="field"><label for="rs-user">Usuário</label><input id="rs-user" required></div>
+          <p class="error-msg" id="reset-error" role="alert"></p>
+          <button class="btn btn-primary btn-block" type="submit">Solicitar</button>
+          <div class="link-row"><button type="button" class="linkbtn" data-panel="login">← Voltar para entrar</button></div>
+        </form>
+      </div>
+    </main>
+  </div>
+  <script src="js/shared.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

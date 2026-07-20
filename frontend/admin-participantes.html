@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Participantes — Vida Ativa</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="page" id="conteudo">
+    <div class="page-head between">
+      <div>
+        <h1>Participantes</h1>
+        <p class="sub">Cadastro, avaliações e acesso dos participantes do programa.</p>
+      </div>
+      <div class="row" style="align-items:center">
+        <input id="busca" placeholder="Buscar por nome…" style="min-width:220px;width:auto">
+        <button class="btn btn-primary" id="btn-novo"></button>
+      </div>
+    </div>
+
+    <section class="card" id="form-card" hidden>
+      <h2 id="form-titulo">Cadastrar participante</h2>
+      <form id="form-participante">
+        <input type="hidden" id="p-id">
+        <div class="field">
+          <label for="p-nome">Nome completo</label>
+          <input id="p-nome" required>
+        </div>
+        <div class="form-grid">
+          <div class="field"><label for="p-nasc">Data de nascimento</label><input id="p-nasc" type="date"></div>
+          <div class="field">
+            <label for="p-sexo">Sexo</label>
+            <select id="p-sexo">
+              <option value="">—</option>
+              <option value="Feminino">Feminino</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
+          <div class="field"><label for="p-tel">Telefone</label><input id="p-tel"></div>
+          <div class="field"><label for="p-contato">Contato de emergência</label><input id="p-contato"></div>
+        </div>
+        <div class="field"><label for="p-end">Endereço</label><input id="p-end"></div>
+        <div class="form-grid">
+          <div class="field"><label for="p-saude">Informações de saúde</label><textarea id="p-saude"></textarea></div>
+          <div class="field"><label for="p-cond">Condições pré-existentes</label><textarea id="p-cond"></textarea></div>
+          <div class="field"><label for="p-med">Medicamentos em uso</label><textarea id="p-med"></textarea></div>
+          <div class="field"><label for="p-obs">Observações gerais</label><textarea id="p-obs"></textarea></div>
+        </div>
+        <div class="checkbox" style="margin:.2rem 0 1rem">
+          <input id="p-ativo" type="checkbox" checked>
+          <label for="p-ativo">Participante ativo</label>
+        </div>
+        <p class="error-msg" id="p-error" role="alert"></p>
+        <div class="row">
+          <button class="btn btn-primary" type="submit">Salvar</button>
+          <button class="btn btn-ghost" type="button" id="btn-cancelar">Cancelar</button>
+        </div>
+      </form>
+    </section>
+
+    <div id="lista" class="mt" aria-live="polite"></div>
+  </main>
+  <script src="js/shared.js"></script>
+  <script src="js/admin-participantes.js"></script>
+</body>
+</html>

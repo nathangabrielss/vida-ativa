@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Biblioteca — Vida Ativa</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="page" id="conteudo">
+    <div class="page-head between">
+      <div>
+        <h1>Biblioteca de vídeos</h1>
+        <p class="sub">Conteúdos educativos sobre saúde, alimentação, atividade física e bem-estar.</p>
+      </div>
+      <button class="btn btn-primary" id="btn-novo" hidden></button>
+    </div>
+
+    <section class="card" id="form-card" hidden>
+      <h2 id="form-titulo">Adicionar vídeo</h2>
+      <form id="form-video">
+        <input type="hidden" id="v-id">
+        <div class="form-grid">
+          <div class="field"><label for="v-titulo">Título</label><input id="v-titulo" required></div>
+          <div class="field"><label for="v-cat">Categoria</label><input id="v-cat" list="cats" required placeholder="ex.: Alimentação saudável">
+            <datalist id="cats">
+              <option>Exercícios funcionais</option><option>Exercícios para quem tem limitações</option>
+              <option>Alongamentos</option><option>Alimentação</option>
+              <option>Saúde da mulher</option><option>Qualidade de vida</option>
+            </datalist>
+          </div>
+        </div>
+        <div class="field"><label for="v-url">Link do YouTube</label><input id="v-url" type="url" required placeholder="https://www.youtube.com/watch?v=...">
+          <span class="hint">O vídeo é exibido dentro do sistema, sem sair da página.</span>
+        </div>
+        <div class="field"><label for="v-desc">Descrição breve</label><textarea id="v-desc"></textarea></div>
+        <p class="error-msg" id="v-error" role="alert"></p>
+        <div class="row">
+          <button class="btn btn-primary" type="submit">Salvar</button>
+          <button class="btn btn-ghost" type="button" id="btn-cancelar">Cancelar</button>
+        </div>
+      </form>
+    </section>
+
+    <div class="chips" id="filtros" role="tablist" aria-label="Filtrar por categoria"></div>
+    <div id="conteudo-lista" aria-live="polite"></div>
+  </main>
+  <script src="js/shared.js"></script>
+  <script src="js/biblioteca.js"></script>
+</body>
+</html>

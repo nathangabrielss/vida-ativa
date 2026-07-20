@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "vida-ativa",
+      "runtimeExecutable": "C:\\Users\\nathan.gabriel\\ambiente.virtual\\Scripts\\python.exe",
+      "runtimeArgs": ["backend/app.py"],
+      "port": 5056
+    }
+  ]
+}

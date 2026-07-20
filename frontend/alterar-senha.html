@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alterar senha — Vida Ativa</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="auth-shell" style="grid-template-columns:1fr">
+    <main class="auth-main">
+      <div class="auth-card">
+        <div class="brand"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></span> Vida Ativa</div>
+        <h2 style="text-align:center;margin:.6rem 0">Alterar senha</h2>
+        <p id="forced-note" class="notice notice-warn" hidden>Por segurança, defina uma nova senha para continuar.</p>
+        <form id="form-pass">
+          <div class="field">
+            <label for="cur">Senha atual</label>
+            <input id="cur" type="password" autocomplete="current-password" required>
+            <span class="hint">É a senha temporária, se você recebeu uma.</span>
+          </div>
+          <div class="field" style="margin-bottom:.4rem">
+            <label for="nova">Nova senha</label>
+            <input id="nova" type="password" autocomplete="new-password" required>
+          </div>
+          <div id="pw-meter"></div>
+          <div class="field">
+            <label for="nova2">Confirmar nova senha</label>
+            <input id="nova2" type="password" autocomplete="new-password" required>
+          </div>
+          <p class="error-msg" id="pass-error" role="alert"></p>
+          <button class="btn btn-primary btn-block" type="submit">Salvar nova senha</button>
+        </form>
+        <div class="link-row" style="justify-content:space-between">
+          <button type="button" class="linkbtn" id="voltar">← Voltar</button>
+          <button type="button" class="linkbtn" id="sair">Sair</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="js/shared.js"></script>
+  <script src="js/alterar-senha.js"></script>
+</body>
+</html>

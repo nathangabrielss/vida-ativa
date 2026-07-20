@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minhas avaliações — Vida Ativa</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="page" id="conteudo">
+    <h1>Minhas avaliações</h1>
+    <p class="muted">Acompanhe a evolução do seu peso e do seu IMC.</p>
+
+    <section class="card">
+      <h2>Evolução</h2>
+      <div class="chart-box"><canvas id="grafico" aria-label="Gráfico de evolução de peso e IMC"></canvas></div>
+    </section>
+
+    <section class="card">
+      <h2>Histórico</h2>
+      <div id="historico" aria-live="polite"></div>
+    </section>
+  </main>
+  <script src="vendor/chart.umd.min.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/minhas-avaliacoes.js"></script>
+</body>
+</html>

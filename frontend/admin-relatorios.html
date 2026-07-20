@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Relatórios — Vida Ativa</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="page" id="conteudo">
+    <div class="page-head">
+      <h1>Relatórios gerenciais</h1>
+      <p class="sub">Escolha um relatório e exporte em Excel ou PDF.</p>
+    </div>
+
+    <section class="card no-print">
+      <div class="form-grid">
+        <div class="field">
+          <label for="tipo">Relatório</label>
+          <select id="tipo">
+            <option value="geral">Geral de participantes</option>
+            <option value="avaliacoes">Avaliações físicas</option>
+            <option value="evolucao">Evolução individual</option>
+            <option value="periodo">Consolidado por período</option>
+            <option value="semreav">Participantes sem reavaliação</option>
+            <option value="nutricional">Classificação nutricional</option>
+            <option value="metas">Metas e evolução</option>
+          </select>
+        </div>
+        <div class="field" id="per-de-box" hidden><label for="per-de">De</label><input id="per-de" type="date"></div>
+        <div class="field" id="per-ate-box" hidden><label for="per-ate">Até</label><input id="per-ate" type="date"></div>
+      </div>
+      <div class="row">
+        <button class="btn btn-primary" id="btn-xlsx"></button>
+        <button class="btn btn-outline" id="btn-pdf"></button>
+      </div>
+    </section>
+
+    <section class="card mt" id="report-area">
+      <div class="between" style="align-items:flex-end">
+        <div>
+          <h2 id="report-title">Relatório</h2>
+          <p class="muted small" id="report-sub"></p>
+        </div>
+        <span class="tag" id="report-count"></span>
+      </div>
+      <div id="report-table" class="mt"></div>
+    </section>
+  </main>
+  <script src="vendor/xlsx.full.min.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/admin-relatorios.js"></script>
+</body>
+</html>

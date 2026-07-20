@@ -1,0 +1,15 @@
+{
+  "name": "vida-ativa",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler pages deploy frontend",
+    "dev:cloudflare": "wrangler pages dev frontend --compatibility-date=2026-07-17",
+    "db:apply": "wrangler d1 migrations apply vida-ativa --remote",
+    "db:apply:local": "wrangler d1 migrations apply vida-ativa --local",
+    "check": "node --check functions/api/[[path]].js && node --check functions/_lib/db.js && node --check functions/_lib/auth.js && node --check functions/_lib/http.js && node --check functions/_lib/schema.js && node --check functions/_lib/imc.js"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

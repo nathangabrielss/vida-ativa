@@ -1,0 +1,13 @@
+name = "vida-ativa"
+compatibility_date = "2026-07-17"
+pages_build_output_dir = "frontend"
+
+# Banco D1 (SQLite gerenciado). O database_id é preenchido no deploy:
+#   1. wrangler d1 create vida-ativa
+#   2. cole o database_id gerado abaixo
+#   3. wrangler d1 migrations apply vida-ativa --remote
+[[d1_databases]]
+binding = "DB"
+database_name = "vida-ativa"
+database_id = "4ab31795-983b-453f-82ff-0436d0e7926a"
+migrations_dir = "migrations"

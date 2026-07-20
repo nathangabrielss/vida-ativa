@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Participante — Vida Ativa</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="page" id="conteudo">
+    <p><a href="admin-participantes.html">← Voltar para participantes</a></p>
+    <div class="page-head between">
+      <div>
+        <h1 id="titulo">Participante</h1>
+        <p class="sub" id="subtitulo"></p>
+      </div>
+      <button class="btn btn-outline" id="btn-acesso" hidden></button>
+    </div>
+
+    <section class="card">
+      <h2>Dados cadastrais</h2>
+      <div id="dados" class="data-grid"></div>
+    </section>
+
+    <div class="cols-2 wide-left mt">
+      <section class="card">
+        <h2>Registrar avaliação física</h2>
+        <form id="form-aval">
+          <div class="form-grid">
+            <div class="field"><label for="a-data">Data da avaliação</label><input id="a-data" type="date" required></div>
+            <div class="field"><label for="a-peso">Peso (kg)</label><input id="a-peso" type="number" step="0.1" min="0" inputmode="decimal"></div>
+            <div class="field"><label for="a-altura">Altura (m)</label><input id="a-altura" type="number" step="0.01" min="0" inputmode="decimal" placeholder="ex.: 1.70"></div>
+            <div class="field"><label for="a-circ">Circunf. abdominal (cm)</label><input id="a-circ" type="number" step="0.1" min="0" inputmode="decimal"></div>
+            <div class="field"><label for="a-sis">Pressão sistólica</label><input id="a-sis" type="number" min="0" inputmode="numeric" placeholder="ex.: 120"></div>
+            <div class="field"><label for="a-dia">Pressão diastólica</label><input id="a-dia" type="number" min="0" inputmode="numeric" placeholder="ex.: 80"></div>
+            <div class="field"><label for="a-fc">Freq. cardíaca (bpm)</label><input id="a-fc" type="number" min="0" inputmode="numeric"></div>
+            <div class="field"><label for="a-meta">Meta individual</label><input id="a-meta" placeholder="ex.: Reduzir 3 kg"></div>
+          </div>
+          <div class="field"><label for="a-obs">Observações do avaliador</label><textarea id="a-obs"></textarea></div>
+          <p class="notice" id="imc-preview" hidden></p>
+          <p class="error-msg" id="a-error" role="alert"></p>
+          <button class="btn btn-primary" type="submit">Salvar avaliação</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Evolução</h2>
+        <div class="chart-box"><canvas id="grafico" aria-label="Gráfico de evolução de peso e IMC"></canvas></div>
+        <p class="muted small" id="grafico-vazio" hidden>Sem avaliações suficientes para o gráfico.</p>
+      </section>
+    </div>
+
+    <section class="card mt">
+      <h2>Histórico de avaliações</h2>
+      <div id="historico"></div>
+    </section>
+  </main>
+  <script src="vendor/chart.umd.min.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/admin-participante.js"></script>
+</body>
+</html>

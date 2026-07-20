@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Vida Ativa">
+  <rect width="512" height="512" rx="96" fill="#14603f"/>
+  <path d="M256 118c-70 0-132 42-160 108 78 6 132 44 160 108 28-64 82-102 160-108-28-66-90-108-160-108z" fill="#7fd1a6"/>
+  <path d="M256 334c-6-60-40-104-96-128 60 8 96 44 96 128z" fill="#c7f0d9"/>
+  <path d="M120 380h80l24-48 40 96 28-64 20 32h80" fill="none" stroke="#fff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

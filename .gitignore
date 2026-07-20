@@ -1,0 +1,22 @@
+# Dados locais e backups (nunca versionar dados de saúde)
+data/
+*.db
+*.db-journal
+*.bak
+*.bak.gz
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node / Wrangler
+node_modules/
+.wrangler/
+.dev.vars
+.tools/
+
+# Sistema
+.DS_Store
+Thumbs.db

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Usuários — Vida Ativa</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="page" id="conteudo">
+    <h1>Usuários e acessos</h1>
+    <p class="muted">Aprove cadastros, defina administradores e gere senhas temporárias.</p>
+
+    <section class="card" id="resets-card" hidden>
+      <h2>Pedidos de recuperação de senha</h2>
+      <div id="resets"></div>
+    </section>
+
+    <section class="card">
+      <h2>Contas</h2>
+      <div id="usuarios" aria-live="polite"></div>
+    </section>
+  </main>
+  <script src="js/shared.js"></script>
+  <script src="js/admin-usuarios.js"></script>
+</body>
+</html>

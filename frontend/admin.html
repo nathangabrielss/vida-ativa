@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel — Vida Ativa</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="page" id="conteudo">
+    <div class="page-head between">
+      <div>
+        <h1>Painel do programa</h1>
+        <p class="sub">Indicadores consolidados do acompanhamento dos participantes.</p>
+      </div>
+      <a class="btn btn-outline" id="btn-relatorios" href="admin-relatorios.html"></a>
+    </div>
+
+    <div class="kpi-grid" id="kpis" aria-live="polite"></div>
+
+    <div class="grid mt" id="charts" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
+      <section class="card"><h2>Distribuição por classificação de IMC</h2><div class="chart-box"><canvas id="ch-imc"></canvas></div><p class="muted small" id="ch-imc-vazio" hidden>Sem avaliações registradas.</p></section>
+      <section class="card"><h2>Participantes por faixa etária</h2><div class="chart-box"><canvas id="ch-idade"></canvas></div></section>
+      <section class="card"><h2>Participantes por sexo</h2><div class="chart-box"><canvas id="ch-sexo"></canvas></div></section>
+    </div>
+
+    <section class="card mt">
+      <h2>Ações rápidas</h2>
+      <div class="row" id="acoes"></div>
+    </section>
+  </main>
+  <script src="vendor/chart.umd.min.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
