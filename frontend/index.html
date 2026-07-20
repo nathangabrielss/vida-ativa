@@ -20,11 +20,11 @@
     fetch('/api/me', { credentials: 'same-origin', headers: { 'X-Requested-With': 'XMLHttpRequest' } })
       .then((r) => (r.ok ? r.json() : null))
       .then((u) => {
-        if (!u) { location.replace('login.html'); return; }
+        if (!u) { location.replace('/login'); return; }
         if (u.mustChangePassword) { location.replace('alterar-senha.html?forced=1'); return; }
         location.replace(u.role === 'admin' ? 'admin.html' : 'inicio.html');
       })
-      .catch(() => location.replace('login.html'));
+      .catch(() => location.replace('/login'));
   </script>
 </body>
 </html>

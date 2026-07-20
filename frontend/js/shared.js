@@ -32,11 +32,16 @@
   }
 
   /* ---------- API ---------- */
+  function isLoginPage() {
+    const path = location.pathname.replace(/\/+$/, "") || "/";
+    return path === "/login" || path === "/login.html";
+  }
+
   async function api(path, opts = {}) {
     const headers = { "Content-Type": "application/json", "X-Requested-With": "XMLHttpRequest", ...(opts.headers || {}) };
     const res = await fetch(path, { credentials: "same-origin", ...opts, headers });
-    if (res.status === 401 && !location.pathname.endsWith("login.html")) {
-      location.href = "login.html";
+    if (res.status === 401 && !isLoginPage()) {
+      location.href = "/login";
       throw new Error("unauthorized");
     }
     return res;
@@ -172,7 +177,7 @@
     document.body.prepend(nav);
     nav.querySelector("#btn-logout").addEventListener("click", async () => {
       try { await api("/api/logout", { method: "POST" }); } catch { /* ignore */ }
-      location.href = "login.html";
+      location.href = "/login";
     });
     nav.querySelector(".nav-toggle").addEventListener("click", (e) => {
       const open = nav.querySelector(".nav-links").classList.toggle("open");
@@ -184,7 +189,7 @@
   /* ---------- boot de página ---------- */
   async function boot({ admin = false } = {}) {
     let user;
-    try { user = await apiJson("/api/me"); } catch { location.href = "login.html"; throw new Error("redirecting"); }
+    try { user = await apiJson("/api/me"); } catch { location.href = "/login"; throw new Error("redirecting"); }
     const page = location.pathname.split("/").pop();
     if (user.mustChangePassword && page !== "alterar-senha.html") { location.href = "alterar-senha.html?forced=1"; throw new Error("must_change_password"); }
     if (admin && user.role !== "admin") { location.href = "inicio.html"; throw new Error("forbidden"); }

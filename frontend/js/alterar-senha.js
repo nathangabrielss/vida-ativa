@@ -12,7 +12,7 @@
       document.getElementById("forced-note").hidden = false;
       document.getElementById("voltar").hidden = true;
     }
-  }).catch(() => location.replace("login.html"));
+  }).catch(() => location.replace("/login"));
 
   document.getElementById("voltar").addEventListener("click", (e) => {
     e.preventDefault();
@@ -22,7 +22,7 @@
   document.getElementById("sair").addEventListener("click", async (e) => {
     e.preventDefault();
     try { await api("/api/logout", { method: "POST" }); } catch { /* ignore */ }
-    location.href = "login.html";
+    location.href = "/login";
   });
 
   document.getElementById("form-pass").addEventListener("submit", async (e) => {
